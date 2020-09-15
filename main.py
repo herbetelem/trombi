@@ -3,6 +3,7 @@ import math
 
 from class_py.student_class import Student
 from class_py.requeteSQL import SQL
+from class_py.profile import Profile
 
 
 
@@ -59,16 +60,22 @@ def create_student():
 
 #########################################
 
+# Instance de profile
+profile = Profile(screen_width, screen_height)
 
 running = True
 
 # boucle tant que running est vrai
 while running:
-    # appliquer le background
-    screen.blit(background, (0,0))
+    if profile.profile_selected:
+        screen.blit(profile.background, (0,0))
+        profile.update(screen)
+    else:
+        # appliquer le background
+        screen.blit(background, (0,0))
 
-    for avatar in list_licorne:
-        screen.blit(avatar.image, avatar.rect)
+        for avatar in list_licorne:
+            screen.blit(avatar.image, avatar.rect)
 
     # update le screen
     pygame.display.flip()
@@ -82,6 +89,10 @@ while running:
             print("Le jeu ce ferme")
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            for avatar in list_licorne:
-                if avatar.rect.collidepoint(event.pos):
-                    print(avatar.name)
+            if profile.profile_selected == False:
+                for avatar in list_licorne:
+                    if avatar.rect.collidepoint(event.pos):
+                        profile.launch_profile(avatar.name)
+            else:
+                if profile.home.rect.collidepoint(event.pos):
+                    profile.return_home()
