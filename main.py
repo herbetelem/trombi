@@ -11,8 +11,8 @@ pygame.init()
 
 
 # set la taille de l'écran
-screen_width = 1060
-screen_height = 730
+screen_width = 1500
+screen_height = 1000
 
 # generer la fenetre du jeu
 pygame.display.set_caption("Trombinoscope")
@@ -70,7 +70,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
-            print("Le jeu ce ferme")
+            print("Le jeu se ferme")
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if profile.profile_selected == False:
