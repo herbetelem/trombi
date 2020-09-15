@@ -11,3 +11,6 @@ class Profile():
     def launch_profile(self, name):
         self.profile_selected = True
         self.name = name
+        # modifier plus tard
+        self.avatar = pygame.image.load("asset/" + self.name + ".jpg")
+        ####################

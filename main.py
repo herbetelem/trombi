@@ -27,10 +27,13 @@ list_licorne = []
 #   Recuperation des avatars #
 #   pour Laura               #
 ##############################
+list_coordone = [[100, 50], [420, 50], [740, 50], 
+                 [100, 276], [420, 276], [740, 276], 
+                 [100, 502], [420, 502], [740, 502]]
 
 # a virer apres ton travail
 #########################################
-list_licorne.append(Student("asset/avatar.png", 100, 50, "Laura"))
+list_licorne.append(Student("asset/laura.png", 100, 50, "Laura"))
 list_licorne.append(Student("asset/avatar.png", 420, 50, "Aurélia"))
 list_licorne.append(Student("asset/avatar.png", 740, 50, "Mélanie"))
 list_licorne.append(Student("asset/alex.png", 100, 276, "Alex"))
@@ -38,7 +41,7 @@ list_licorne.append(Student("asset/alexandre.png", 420, 276, "Alexandre"))
 list_licorne.append(Student("asset/avatar.png", 740, 276, "Guillaume"))
 list_licorne.append(Student("asset/avatar.png", 100, 502, "Willfried"))
 list_licorne.append(Student("asset/hadrien.jpg", 420, 502, "Hadrien"))
-list_licorne.append(Student("asset/avatar.png", 740, 502, "Javier"))
+list_licorne.append(Student("asset/javier.png", 740, 502, "Javier"))
 
 #########################################
 
