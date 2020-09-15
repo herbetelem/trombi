@@ -14,7 +14,7 @@ class Profile():
         self.home = Home()
         self.name = name
         # modifier plus tard
-        self.avatar = pygame.image.load("asset/" + self.name + ".png")
+        self.avatar = pygame.image.load(name)
         self.avatar = pygame.transform.scale(self.avatar, (300, 280))
         ####################
         

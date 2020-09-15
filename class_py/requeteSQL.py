@@ -18,7 +18,7 @@ class SQL():
         try:
             self.MyConnection = psycopg2.connect(
                 host="localhost",
-                database="Trombi",
+                database="trombi",
                 user="postgres",
                 password="group12"
             )
@@ -54,4 +54,4 @@ class SQL():
             "SELECT * " +
             "FROM stagiaire " +
             "INNER JOIN parcours ON stagiaire.id = parcours.id ")
-        self.MyResult = self.ExecuteQuery( MyQuery)
+        self.MyResult = self.ExecuteQuery(MyQuery)

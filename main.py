@@ -37,28 +37,12 @@ list_coordonnée = [[100, 50],  [420, 50],  [740, 50],
 
 sql = SQL()
 sql.requeteSQL()
+print(len(sql.MyResult))
 
-def create_student():
-    for num in range(10) :
-        list_licorne.append(Student(list_coordonnée[num][0], list_coordonnée[num][1], 
-        sql.MyResult[num][0], sql.MyResult[num][1], sql.MyResult[num][2], sql.MyResult[num][3], 
-        sql.MyResult[num][4], sql.MyResult[num][5], sql.MyResult[num][6], sql.MyResult[num][9]))
-
-
-
-# a virer apres ton travail
-#########################################
-# list_licorne.append(Student("asset/laura.png", 100, 50, "Laura"))
-# list_licorne.append(Student("asset/avatar.png", 420, 50, "Aurélia"))
-# list_licorne.append(Student("asset/avatar.png", 740, 50, "Mélanie"))
-# list_licorne.append(Student("asset/alex.png", 100, 276, "Alex"))
-# list_licorne.append(Student("asset/avatar.png", 420, 276, "Alexandre"))
-# list_licorne.append(Student("asset/avatar.png", 740, 276, "Guillaume"))
-# list_licorne.append(Student("asset/avatar.png", 100, 502, "Willfried"))
-# list_licorne.append(Student("asset/hadrien.jpg", 420, 502, "Hadrien"))
-# list_licorne.append(Student("asset/javier.png", 740, 502, "Javier"))
-
-#########################################
+for num in range(8) :
+    list_licorne.append(Student(list_coordonnée[num][0], list_coordonnée[num][1], 
+    sql.MyResult[num][0], sql.MyResult[num][1], sql.MyResult[num][2], sql.MyResult[num][3], 
+    sql.MyResult[num][4], sql.MyResult[num][5], sql.MyResult[num][6], sql.MyResult[num][9]))
 
 # Instance de profile
 profile = Profile(screen_width, screen_height)
@@ -92,7 +76,7 @@ while running:
             if profile.profile_selected == False:
                 for avatar in list_licorne:
                     if avatar.rect.collidepoint(event.pos):
-                        profile.launch_profile(avatar.name)
+                        profile.launch_profile(avatar.avatar)
             else:
                 if profile.home.rect.collidepoint(event.pos):
                     profile.return_home()
