@@ -17,11 +17,12 @@ class Profile():
         # self.future = result requete sql
         self.story_blit = self.text_font.render(self.test, 1, (0, 0, 0))
         self.future_blit = self.text_font.render("caca", 1, (0, 0, 0))
+        self.home = Home()
 
 
     def launch_profile(self, name):
         self.profile_selected = True
-        self.home = Home()
+        
         self.name = name
         # modifier plus tard
         self.avatar = pygame.image.load(name)

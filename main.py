@@ -11,8 +11,8 @@ pygame.init()
 
 
 # set la taille de l'écran
-screen_width = 1500
-screen_height = 1000
+screen_width = 1050
+screen_height = 750
 
 # generer la fenetre du jeu
 pygame.display.set_caption("Trombinoscope")
@@ -37,9 +37,8 @@ list_coordonnée = [[100, 50],  [420, 50],  [740, 50],
 
 sql = SQL()
 sql.requeteSQL()
-print(len(sql.MyResult))
 
-for num in range(8) :
+for num in range(9) :
     list_licorne.append(Student(list_coordonnée[num][0], list_coordonnée[num][1], 
     sql.MyResult[num][0], sql.MyResult[num][1], sql.MyResult[num][2], sql.MyResult[num][3], 
     sql.MyResult[num][4], sql.MyResult[num][5], sql.MyResult[num][6], sql.MyResult[num][9]))
@@ -53,6 +52,7 @@ running = True
 while running:
     if profile.profile_selected:
         screen.blit(profile.background, (0,0))
+        screen.blit(profile.home.image, profile.home.rect)
         profile.update(screen)
     else:
         # appliquer le background
@@ -74,9 +74,13 @@ while running:
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if profile.profile_selected == False:
+                
                 for avatar in list_licorne:
                     if avatar.rect.collidepoint(event.pos):
                         profile.launch_profile(avatar.avatar)
+                
+
             else:
+                
                 if profile.home.rect.collidepoint(event.pos):
                     profile.return_home()

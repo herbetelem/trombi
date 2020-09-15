@@ -51,7 +51,7 @@ class SQL():
         self.MyConnection = self.DBConnect()
 
         MyQuery = (
-            "SELECT * " +
+            "SELECT * , parcours.parcours " +
             "FROM stagiaire " +
-            "INNER JOIN parcours ON stagiaire.id = parcours.id ")
+            "INNER JOIN parcours ON stagiaire.id = parcours.id " )
         self.MyResult = self.ExecuteQuery(MyQuery)
