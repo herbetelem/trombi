@@ -74,6 +74,10 @@ while running:
             print("Le jeu ce ferme")
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            for avatar in list_licorne:
-                if avatar.rect.collidepoint(event.pos):
-                    profile.launch_profile(avatar.name)
+            if profile.profile_selected == False:
+                for avatar in list_licorne:
+                    if avatar.rect.collidepoint(event.pos):
+                        profile.launch_profile(avatar.name)
+            else:
+                if profile.home.rect.collidepoint(event.pos):
+                    profile.return_home()
