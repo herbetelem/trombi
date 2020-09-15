@@ -1,5 +1,7 @@
 import pygame
 
+from class_py.home import Home
+from class_py.requeteSQL import SQL
 
 class Profile():
     
@@ -19,11 +21,15 @@ class Profile():
 
     def launch_profile(self, name):
         self.profile_selected = True
+        self.home = Home()
         self.name = name
         # modifier plus tard
         self.avatar = pygame.image.load("asset/" + self.name + ".png")
         self.avatar = pygame.transform.scale(self.avatar, (300, 280))
         ####################
+        
+    def return_home(self):
+        self.profile_selected = False
         
     def update(self, screen):
         screen.blit(self.avatar, (50, 50))
