@@ -32,7 +32,7 @@ list_licorne = []
 list_licorne.append(Student("asset/avatar.png", 100, 50, "Laura"))
 list_licorne.append(Student("asset/avatar.png", 420, 50, "Aurélia"))
 list_licorne.append(Student("asset/avatar.png", 740, 50, "Mélanie"))
-list_licorne.append(Student("asset/avatar.png", 100, 276, "Alex"))
+list_licorne.append(Student("asset/alex.png", 100, 276, "Alex"))
 list_licorne.append(Student("asset/avatar.png", 420, 276, "Alexandre"))
 list_licorne.append(Student("asset/avatar.png", 740, 276, "Guillaume"))
 list_licorne.append(Student("asset/avatar.png", 100, 502, "Willfried"))
