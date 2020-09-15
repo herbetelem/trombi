@@ -2,6 +2,7 @@ import pygame
 import math
 
 from class_py.student_class import Student
+from class_py.profile import Profile
 
 
 
@@ -33,27 +34,33 @@ list_coordone = [[100, 50], [420, 50], [740, 50],
 # a virer apres ton travail
 #########################################
 list_licorne.append(Student("asset/laura.png", 100, 50, "Laura"))
-list_licorne.append(Student("asset/avatar.png", 420, 50, "Aurélia"))
+list_licorne.append(Student("asset/aurelia.png", 420, 50, "Aurélia"))
 list_licorne.append(Student("asset/avatar.png", 740, 50, "Mélanie"))
 list_licorne.append(Student("asset/alex.png", 100, 276, "Alex"))
-list_licorne.append(Student("asset/avatar.png", 420, 276, "Alexandre"))
-list_licorne.append(Student("asset/avatar.png", 740, 276, "Guillaume"))
-list_licorne.append(Student("asset/avatar.png", 100, 502, "Willfried"))
+list_licorne.append(Student("asset/alexandre.png", 420, 276, "Alexandre"))
+list_licorne.append(Student("asset/guillaume.png", 740, 276, "Guillaume"))
+list_licorne.append(Student("asset/willfried.png", 100, 502, "Willfried"))
 list_licorne.append(Student("asset/hadrien.jpg", 420, 502, "Hadrien"))
 list_licorne.append(Student("asset/javier.png", 740, 502, "Javier"))
 
 #########################################
 
+# Instance de profile
+profile = Profile(screen_width, screen_height)
 
 running = True
 
 # boucle tant que running est vrai
 while running:
-    # appliquer le background
-    screen.blit(background, (0,0))
+    if profile.profile_selected:
+        screen.blit(profile.background, (0,0))
+        profile.update(screen)
+    else:
+        # appliquer le background
+        screen.blit(background, (0,0))
 
-    for avatar in list_licorne:
-        screen.blit(avatar.image, avatar.rect)
+        for avatar in list_licorne:
+            screen.blit(avatar.image, avatar.rect)
 
     # update le screen
     pygame.display.flip()
@@ -69,4 +76,4 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             for avatar in list_licorne:
                 if avatar.rect.collidepoint(event.pos):
-                    print(avatar.name)
+                    profile.launch_profile(avatar.name)

@@ -12,5 +12,9 @@ class Profile():
         self.profile_selected = True
         self.name = name
         # modifier plus tard
-        self.avatar = pygame.image.load("asset/" + self.name + ".jpg")
+        self.avatar = pygame.image.load("asset/" + self.name + ".png")
+        self.avatar = pygame.transform.scale(self.avatar, (300, 280))
         ####################
+        
+    def update(self, screen):
+        screen.blit(self.avatar, (50, 50))
