@@ -35,7 +35,7 @@ list_coordone = [[100, 50], [420, 50], [740, 50],
 #########################################
 list_licorne.append(Student("asset/laura.png", 100, 50, "Laura"))
 list_licorne.append(Student("asset/aurelia.png", 420, 50, "Aurélia"))
-list_licorne.append(Student("asset/avatar.png", 740, 50, "Mélanie"))
+list_licorne.append(Student("asset/melanie.png", 740, 50, "Mélanie"))
 list_licorne.append(Student("asset/alex.png", 100, 276, "Alex"))
 list_licorne.append(Student("asset/alexandre.png", 420, 276, "Alexandre"))
 list_licorne.append(Student("asset/guillaume.png", 740, 276, "Guillaume"))
