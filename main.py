@@ -39,9 +39,11 @@ sql = SQL()
 sql.requeteSQL()
 
 for num in range(9) :
+    id_student = sql.requeteSQL_course(sql.MyResult[num][0])
+    sql.requeteSQL()
     list_licorne.append(Student(list_coordonnée[num][0], list_coordonnée[num][1], 
     sql.MyResult[num][0], sql.MyResult[num][1], sql.MyResult[num][2], sql.MyResult[num][3], 
-    sql.MyResult[num][4], sql.MyResult[num][5], sql.MyResult[num][6], sql.MyResult[num][9]))
+    sql.MyResult[num][4], sql.MyResult[num][5], sql.MyResult[num][6], id_student))
 
 # Instance de profile
 profile = Profile(screen_width, screen_height)
@@ -60,6 +62,7 @@ while running:
 
         for avatar in list_licorne:
             screen.blit(avatar.image, avatar.rect)
+            print(avatar.job)
 
     # update le screen
     pygame.display.flip()

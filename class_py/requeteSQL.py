@@ -51,7 +51,18 @@ class SQL():
         self.MyConnection = self.DBConnect()
 
         MyQuery = (
-            "SELECT * , parcours.parcours " +
-            "FROM stagiaire " +
-            "INNER JOIN parcours ON stagiaire.id = parcours.id " )
+            "SELECT * " +
+            "FROM stagiaire " )
         self.MyResult = self.ExecuteQuery(MyQuery)
+
+    def requeteSQL_course(self, stagiaire) :
+        
+        self.MyConnection = self.DBConnect()
+
+        MyQuery = (
+            "SELECT parcours.parcours " +
+            "FROM parcours " +
+            f"WHERE id_stagiaire = {stagiaire}")
+        Result = self.ExecuteQuery(MyQuery)
+
+        return Result
